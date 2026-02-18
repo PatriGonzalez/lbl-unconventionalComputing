@@ -1,1 +1,35 @@
+[
+  {
+    "slug": "vias",
+    "title": "VIAS",
+    "short": "Developing vector-in-memory accelerators and system integration techniques to speed HPC workloads.",
+    "status": "Active",
+    "tags": ["HPC","Accelerators"],
+    "lead": "TBD"
+  },
+  {
+    "slug": "nifty",
+    "title": "NIFTY",
+    "short": "Creating novel I/O and filesystem approaches for extreme-scale data workflows.",
+    "status": "Active",
+    "tags": ["Storage","I/O"],
+    "lead": "TBD"
+  },
+  {
+    "slug": "qce",
+    "title": "QCE",
+    "short": "Quantum-classical co-design for next-generation compute and measurement pipelines.",
+    "status": "Active",
+    "tags": ["Quantum","Co-design"],
+    "lead": "TBD"
+  },
+  {
+    "slug": "superconducting-adc",
+    "title": "Superconducting ADC",
+    "short": "Exploring superconducting analog-to-digital conversion hardware for low-noise, high-bandwidth readout.",
+    "status": "Active",
+    "tags": ["Hardware","Cryo"],
+    "lead": "TBD"
+  }
+]
 
