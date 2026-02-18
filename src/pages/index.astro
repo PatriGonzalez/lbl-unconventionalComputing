@@ -1,1 +1,64 @@
+---
+// Homepage: data-driven, easy to maintain.
+// Place this file at: src/pages/index.astro
+import fs from "fs";
+import path from "path";
+
+const contentDir = (p) => path.resolve(`./src/content/${p}`);
+
+// Load projects and updates (JSON files are easiest for non-technical edits)
+const projects = JSON.parse(fs.readFileSync(contentDir("projects.json"), "utf-8"));
+const updates = JSON.parse(fs.readFileSync(contentDir("updates.json"), "utf-8"));
+
+// Helper: latest 3 updates
+const latestUpdates = updates.slice(0, 3);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>lbl-unconvetionalHPC — Projects & Team</title>
+    <meta name="description" content="VIAS, NIFTY, QCE, Superconducting ADC — projects, team, collaborators from lbl-unconvetionalHPC" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>lbl-unconvetionalHPC</h1>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/projects">Projects</a>
+          <a href="/team">Team</a>
+          <a href="/collaborators">Collaborators</a>
+          <a href="/updates">Updates</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero container">
+        <h2>Exploring unconventional approaches to HPC & quantum-enabled measurement</h2>
+        <p class="lead">
+          We build hardware and software prototypes that push compute and measurement beyond conventional limits.
+          See our projects, meet the team, and find collaborators.
+        </p>
+        <p>
+          <a class="btn" href="#projects">See projects</a>
+          <a class="btn ghost" href="/collaborators">Collaborate</a>
+        </p>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="container cards-section">
+        <h3>Our Projects</h3>
+        <p class="muted">Four active projects focusing on high-impact research and open collaboration.</p>
+
+        <div class="grid">
+          {projects.map((p) => (
+            <article class="card" key={p.slug}>
+              <h4><a href={`/projects/${p.slug}`}>{p.title}</a></h4>
+              <p class="small muted">{p.status} — {p.tags.join(
 
